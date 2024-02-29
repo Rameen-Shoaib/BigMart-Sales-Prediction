@@ -10,8 +10,6 @@
 
  Project structure :
  - _pycache_
- - demo video
- - documentation
  - flask_session
  - proposals
  - static
