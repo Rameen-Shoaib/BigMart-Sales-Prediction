@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+    <br>
+    <div class="tag">
+        <div class="left">
+            <p class="desc">Hi, {{ session["name"] }}</p>
+        </div>
+
+        <center><h2 class="title">Sales Dashboard</h2></center>
+
+        <div class="right">
+            <form name="index" action="/logout">
+                    <button type="submit">Log Out</button>  
+            </form>
+        </div>
+    </div>
+    <br>
+
+    <!-- Embed Streamlit app using iframe -->
+    <iframe src="http://localhost:8501" width="1328" height="800"></iframe>
+    
+{% endblock %}

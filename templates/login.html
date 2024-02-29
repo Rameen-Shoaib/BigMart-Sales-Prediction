@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+    {% if session.get("login_failed") %}
+    <script>
+        window.alert("Login failed. Please check your email, name, and password.");
+    </script>
+    {% set _ = session.pop("login_failed", None) %}
+    {% endif %}
+
+    <div class="wrapper">
+        <div class="right">
+            <form name="index" action="/">
+                <button type="submit">Home</button>
+            </form>
+        </div>
+        
+        <h2>Sign In</h2><br>
+            
+        <form action="/login" method="post">
+            <div class="input-group">
+                <input autofocus name="email" type="text" class="input" required>
+                <label for="">Enter email</label>
+            </div>
+            <br>
+
+            <div class="input-group">
+                <input autofocus name="name"  type="text" class="input" required>
+                <label for="">Enter name</label>
+            </div>
+            <br>
+
+            <div class="input-group">
+                <input name="password" type="password" class="input" required>
+                <label for="">Enter password</label>
+            </div>
+            <br>
+            
+            <center>
+                <button type="submit">Sign In</button>
+            </center>
+            <br>
+        </form>
+    </div>
+
+{% endblock %}

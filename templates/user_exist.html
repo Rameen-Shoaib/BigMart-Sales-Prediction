@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+<div class="wrapper">
+
+    <br><br><br>
+    <form action="/login" method="post">
+        <center>
+            <p class="desc">Email is already in use. So: </p><br>
+            <button type="submit">Login</button>
+        <center>
+    </form>
+    <br>
+
+    <p class="desc">OR</p> 
+    <br>
+    
+    <form action="/register" method="get">
+        <center>
+            <p class="desc">Try with a new email: </p><br>
+            <button type="submit">Register</button>
+        <center>
+    </form>
+    <br><br><br>
+</div>
+
+{% endblock %}

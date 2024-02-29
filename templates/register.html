@@ -1,0 +1,96 @@
+{% extends "layout.html" %}
+
+{% block body %}
+    <div class="wrapper">
+            <h2>Sign Up</h2><br>
+
+            <form name="RegForm" action="/register" onsubmit="return validate()" method="post">
+                <div class="input-group">
+                    <input autofocus name="EMail" type="text" required>
+                    <label for="">Enter email</label>
+                </div>
+                <br>
+
+                <div class="input-group">
+                    <input name="Name" type="text" required>
+                    <label for="">Enter name</label>
+                </div>
+                <br>
+
+                <div class="input-group">
+                    <input name="Password" type="password" required>
+                    <label for="">Enter password</label>
+                </div>
+                <br>
+
+                <div class="input-group">
+                    <input name="Confirm" type="password"  required>
+                    <label for="">Confirm password</label>
+                </div>
+                <br>
+                
+                <center>
+                    <button type="submit">Sign Up</button>
+                </center>
+
+                <br><br>
+            </form>
+        </div>
+        
+    <script>
+        function validate()
+        {
+            var name = document.forms.RegForm.Name.value;
+            var email = document.forms.RegForm.EMail.value;
+            var password = document.forms.RegForm.Password.value;
+            var confirm = document.forms.RegForm.Confirm.value;
+
+            //Javascript regex for Email validation
+            var regEmail = /^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/g;
+
+            // Javascript regex for Name validation
+            var regName =  /^([a-zA-Z ]+)$/g;
+
+            // Javascript regex for Name validation
+            var regPass =  /^([a-zA-Z0-9 _-]+)$/g;
+
+            if (email == "" || !regEmail.test(email))
+            {
+                window.alert("Please enter a valid e-mail address.");
+                email.focus();
+                return false;
+            }
+
+            if (name == "" || !regName.test(name))
+            {
+                window.alert("Please enter a valid user name.");
+                name.focus();
+                return false;
+            }
+
+            if (password == "" || !regPass.test(password))
+            {
+                window.alert("Please enter a valid password. (It can contain alphabets, numbers and - or _)");
+                password.focus();
+                return false;
+            }
+
+            if (password.length < 8)
+            {
+                window.alert("Password should be atleast 8 characters long. (It can contain alphabets, numbers and - or _)");
+                password.focus();
+                return false;
+            }
+
+            if (confirm !== password)
+            {
+                window.alert("Please re-enter the password.");
+                confirm.focus();
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+
+{% endblock %}

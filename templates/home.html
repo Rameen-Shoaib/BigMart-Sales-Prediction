@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+<div class="wrapper">
+    <br><br><center><h2>BIG MART SALES PREDICTION</h2><center><br>
+
+    <div class="box">
+      <p class="desc">
+        Explore the future of retail with our Big Mart Sales Prediction website. Predict sales performance
+        by inputting key parameters, empowering you to make informed decisions. Our intuitive dashboard
+        provides comprehensive insights and visualizations, offering a user-friendly experience. Stay ahead in
+        the retail game with accurate predictions and a user-centric platform. Create an account securely to access
+        advanced features and enjoy a personalized forecasting experience. We prioritize your data security with
+        robust measures, ensuring a confidential and trusted environment for your Big Mart sales predictions.
+      </p>
+      <br><br>
+    </div>
+
+    <form action="/login" method="post">
+        <center><button type="submit">Sign In</button><center>
+    </form>
+
+    <form action="/register" method="get">
+        <center><button type="submit">Sign Up</button><center>
+    </form><br>
+  
+</div>
+
+    {% if success %}
+    <script>
+        window.alert("Account created successfully! You can now log in.");
+    </script>
+    {% endif %}
+
+{% endblock %}
