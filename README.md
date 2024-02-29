@@ -1,7 +1,7 @@
 # __PREDICTION MODEL FOR SALES__
 
-#### NAZISH NADEEM: (Seat Number: B19102114) (Contact Number: 0313-2967525) (Email: nazishnadeem01@gmail.com)
-#### RAMEEN: (Seat Number: B19102119) (Contact Number: 0334-3600360) (Email: rameenchhipa07@gmail.com)
+#### NAZISH NADEEM
+#### RAMEEN
 
 #### Supervisor:  DR. MUHAMMMAD SAEED
 
